@@ -1,0 +1,106 @@
+
+.BoardWrapp{
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    display: flex;
+    border-radius: 12px;
+    
+}
+.left_part{
+    position: relative;
+    width: 34%;
+    background: linear-gradient(to right, rgb(236, 234, 234, 0) 0%, rgb(236, 234, 234, 0) calc(50% - 160px), transparent calc(50% - 30px), transparent calc(50% + 30px), rgb(236, 234, 234, 0) calc(50% + 160px), rgb(5, 5, 5) 100%),
+    url('./../../image/body.jpg'); 
+    background-size: cover;
+}
+.left_part_relief{
+    position: relative;
+    width: 34%;
+    background: linear-gradient(to right, rgb(236, 234, 234, 0) 0%, rgb(236, 234, 234, 0) calc(50% - 160px), transparent calc(50% - 30px), transparent calc(50% + 30px), rgb(236, 234, 234, 0) calc(50% + 160px), rgb(5, 5, 5) 100%),
+    url('./../../image/scal.jpg'); 
+    background-size: cover;
+}
+.left_part_muscle{
+    position: relative;
+    width: 34%;
+    background: linear-gradient(to right, rgb(236, 234, 234, 0) 0%, rgb(236, 234, 234, 0) calc(50% - 160px), transparent calc(50% - 30px), transparent calc(50% + 30px), rgb(236, 234, 234, 0) calc(50% + 160px), rgb(5, 5, 5) 100%),
+    url('./../../image/muscle2.jpg'); 
+    background-size: cover;
+}
+.right_part{
+    width: 66%;
+    background-color: black;
+    padding: 20px 10px 20px 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.right_part::-webkit-scrollbar {
+    display: none; /*chrome*/
+  }
+
+.go_training{
+    min-width: 250px;
+    min-height: 65px;
+    font-size: 26px;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-20%,-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 6px;
+    border-right: 8px solid orange;
+    color: whitesmoke;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+.go_training:hover{
+    background-color: rgb(255, 255, 255, 0.5);
+    color: black;
+    border: 2px solid black;
+}
+
+@media(max-width: 1200px) {
+    .BoardWrapp{
+        flex-direction: column;
+    }
+    .left_part, .left_part_relief, .left_part_muscle{
+        width: 100%;
+        height: 200px;
+        margin: 60px 0;
+        background: #000000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .go_training{
+        transform: none;
+        top: 0;
+        left: 0;
+        position: relative;
+    }
+    .arrow{
+        top:auto;
+        padding: 0;
+    }
+    .right_part{
+        width: 100%;
+        padding: 0;
+    }
+    .text_onBackground {
+        font-size: 105px;
+    }
+}
+@media(max-width: 768px) {
+    .arrow2{
+        left: 10%;
+    }
+}
+@media(max-width: 450px) {
+    .go_training{
+        margin-left: 30px;
+    }
+}

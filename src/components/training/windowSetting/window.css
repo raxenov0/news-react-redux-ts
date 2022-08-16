@@ -1,0 +1,45 @@
+.window_setting{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    max-width: 300px;
+    min-height: 400px;
+    background-color: aliceblue;
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.window_setting input{
+    max-width: 200px;
+    height: 40px;
+    outline: none;
+    font-size: 24px;
+    padding: 3px 5px;
+}
+.window_setting p:nth-child(1){
+    margin-top: 50px;
+}
+.pen_window{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    transform: scale(1.4);
+}
+.save_setting{
+    width: 90%;
+    max-width: 170px;
+    height: 45px;
+    display: block;
+    margin: 40px auto 20px;
+    font-size: 24px;
+    border-radius: 12px;
+    border: none;
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+}

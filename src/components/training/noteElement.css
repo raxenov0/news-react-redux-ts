@@ -1,0 +1,27 @@
+.noteElement{
+    font-size: 20px;
+    display: flex;
+    justify-content: start;
+    background-color: aliceblue;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 12px;
+    margin: 4px 50px;
+    align-items: center;
+}
+.index_movement{
+    margin-right: 10px;
+}
+.noteElement img{
+    margin-left: 20px;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    
+}
+.noteElement .pen_note{
+    display: none;
+}
+.enter .pen_note{
+    display: block;
+}

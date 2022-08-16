@@ -1,0 +1,103 @@
+.arrow.left {
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  z-index: 2;
+}
+
+svg {
+  padding: 5px;
+}
+
+.arrow {
+  cursor: pointer;
+  position: absolute;
+  margin-left: -35px;
+  width: 70px;
+  height: 90px;
+  top: 12%;
+}
+
+.left {
+  left: 75px;
+}
+
+.arrow2 {
+  top: 20%;
+  left: 22%
+}
+
+@media(max-width: 1700px) {
+  .arrow.left.top {
+    top: 30px;
+  }
+}
+
+
+
+
+
+.left:hover polyline,
+.left:focus polyline {
+  stroke-width: 3;
+}
+
+.left:active polyline {
+  stroke-width: 6;
+  transition: all 100ms ease-in-out;
+}
+
+
+
+polyline {
+  transition: all 250ms ease-in-out;
+}
+
+
+/* ------------V2----------- */
+
+.arrowV2 {
+  width: 100px;
+  margin: 20px;
+  display: inline-block;
+  position: relative;
+
+}
+
+.arrowV2::before {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  left: 50%;
+  border-style: solid;
+  border-color: rgb(254, 252, 252);
+  border-width: 2px 2px 0 0;
+  position: absolute;
+  transform-origin: 50% 50%;
+}
+
+.arrowV2.left-type::before {
+  transform: rotate(-135deg);
+  margin: -15px 0 0 -10px;
+}
+
+.arrowV2::after {
+  content: '';
+  display: block;
+  top: 50%;
+  left: 50%;
+  border-style: solid;
+  border-color: rgb(253, 253, 253);
+  position: absolute;
+  transform-origin: 50% 50%;
+}
+
+.arrowV2.left-type::after {
+  width: 40px;
+  height: 0;
+  border-width: 2px 0 0 0;
+  transform: translate(-14px, -1px);
+}

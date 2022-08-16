@@ -1,0 +1,133 @@
+.main_content {
+    display: flex;
+    min-height: 100vh;
+
+    overflow: hidden;
+}
+
+.background {
+    padding-left: 50px;
+    width: 70%;
+    /* background-image: url('./../../image/3.jpg'); */
+    background-size: cover;
+    background: linear-gradient(to right, rgb(236, 234, 234, 0) 0%, rgb(236, 234, 234, 0) calc(50% - 160px), transparent calc(50% - 30px), transparent calc(50% + 30px), rgb(236, 234, 234, 0) calc(50% + 160px), rgb(69, 182, 226) 100%),
+        url('./../../image/3.jpg') no-repeat top center;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    font-family: 'PT Sans';
+}
+
+.content {
+    background-color: rgb(69, 182, 226);
+    width: 30%;
+    text-align: center;
+    padding-right: 50px;
+}
+
+.text_onBackground {
+    font-size: 142px;
+    color: aliceblue;
+    padding: 10px;
+    text-align: center;
+    margin: auto;
+    background: rgba(34, 60, 80, 0.05);
+    backdrop-filter: blur(2px);
+    -webkit-box-shadow: 0px 0px 17px 25px rgba(34, 60, 80, 0.05);
+    -moz-box-shadow: 0px 0px 17px 25px rgba(34, 60, 80, 0.05);
+    box-shadow: 0px 0px 17px 25px rgba(34, 60, 80, 0.05);
+}
+
+.select_text, .select_text_2 {
+    margin: 100px auto 10px;
+    width: 100%;
+    max-width: 350px;
+    padding-bottom: 3px;
+    font-size: 28px;
+    color: aliceblue;
+    border-bottom: 2px dashed whitesmoke;
+}
+
+.select_text_2 {
+    margin: 20px auto 30px;
+}
+
+.class_training {
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.slim_down, .Build_up_muscles, .Relief, .class_culculator {
+    min-width: 280px;
+    max-width: 400px;
+    min-height: 70px;
+    background-color: aliceblue;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background-color: rgb(4 6 6 / 40%);
+    border: 2px solid white;
+    border-radius: 8px;
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.slim_down:hover, .Build_up_muscles:hover, .Relief:hover, .class_culculator:hover {
+    background-color: rgba(25, 25, 25, 0.7);
+}
+
+.slim_down span, .Build_up_muscles span, .Relief span {
+    width: 50%;
+}
+
+.class_culculator {
+    width: 50%;
+}
+
+@media(max-width: 1200px) {
+    .select_text, .select_text_2 {
+        font-size: 22px;
+    }
+
+    .text_onBackground {
+        font-size: 105px;
+    }
+}
+
+@media(max-width: 900px) {
+    .background {
+        width: 60%;
+        padding-left: 0;
+    }
+    .content{
+        width: 40%;
+        padding-right: 20px;
+        
+    }
+}
+@media(max-width: 768px) {
+    .background {
+        display: none;
+    }
+    .content{
+        width: 100%;
+        padding: 0 30px;
+        background: linear-gradient(to right, rgb(236, 234, 234, 0) 0%, rgb(236, 234, 234, 0) calc(50% - 160px), transparent calc(50% - 30px), transparent calc(50% + 30px), rgb(236, 234, 234, 0) calc(50% + 160px), rgb(69, 182, 226) 100%),
+        url('./../../image/3.jpg') no-repeat top center;
+    }
+    .slim_down, .Build_up_muscles, .Relief, .class_culculator{
+        background-color: rgb(30 134 158 / 90%);
+    }
+    .select_text, .select_text_2{
+        margin: 50px auto 10px;
+        font-size: 25px;
+        width: 93%;
+    }
+
+}
