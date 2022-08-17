@@ -1,9 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import useSound from "use-sound";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { IMovement, TypeState } from "../../types";
 import './timer.css'
+
+const boopSfx = require('./../../sound/sound.mp3');
 
 interface ITimer {
     data: IMovement,
@@ -11,6 +14,7 @@ interface ITimer {
 }
 export const Timer: React.FunctionComponent<ITimer> = ({ data, setData }) => {
 
+    const [play] = useSound(boopSfx);
     const url = useNavigate()
 
     const { currentMv } = useTypedSelector(state => state)
@@ -23,12 +27,12 @@ export const Timer: React.FunctionComponent<ITimer> = ({ data, setData }) => {
     const [paused, setPaused] = useState<boolean>(false);
     const [[h, m, s], setTime] = useState<number[]>([hours, minutes, seconds]);
     const [training, setTraining] = useState<boolean>(true)
-    const [end, setEnd] = useState(false)
+    const [end, setEnd] = useState<boolean>(false)
+
 
     function handleClick() {
         if (end) url('/')
     }
-    // console.log(currentMv)
     const tick = (): void => {
 
         if (paused || end) {
@@ -45,7 +49,7 @@ export const Timer: React.FunctionComponent<ITimer> = ({ data, setData }) => {
 
             else setTime([0, parseInt(data.relax), 0])
             setData(currentMv[0])
-
+            play()
         }
         else if (m === 0 && s === 0) {
             setTime([h - 1, 59, 59]);
@@ -56,10 +60,11 @@ export const Timer: React.FunctionComponent<ITimer> = ({ data, setData }) => {
         }
     };
 
-    function stop() {
+    function stop_timer() {
         if (!data && currentMv.length == 0 && (JSON.parse(localStorage.getItem('Movements') || '')?.length == 0)) {
             setEnd(true);
             setTime([0, 0, 0])
+            localStorage.removeItem('selectProgram')
         }
     }
 
@@ -72,8 +77,7 @@ export const Timer: React.FunctionComponent<ITimer> = ({ data, setData }) => {
     }, [])
 
     useEffect(() => {
-        stop()
-
+        stop_timer()
     }, [s])
 
     useEffect(() => {

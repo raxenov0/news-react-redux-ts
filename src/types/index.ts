@@ -27,7 +27,7 @@ export enum TypeState {
     StateAddTime = "STATEADDTIME",
     StateResetCurrMV = "STATERESETCURRMV",
     StatePopCurrMV = "STATEPOPCURRMV",
-    StateDeleteArrCurMV = "STATEDELETEARRCURMV"
+    StateDeleteArrCurMV = "STATEDELETEARRCURMV",
 }
 
 interface IReduceLoad{
@@ -80,7 +80,8 @@ interface IReduceDeleteCurrMV{
     type:TypeState.StateDeleteArrCurMV
 }
 
+
 export type TypeStateAction = IReduceError | IReduceLoad 
 | IReduceSuccess | IReduceAdd | IReduceRemove | IReducePoint 
 | IReduceEdit | IReduceAddTime | IReduceResetCurrMV | IReducePopCurrMV
-| IReduceDeleteCurrMV
+| IReduceDeleteCurrMV 

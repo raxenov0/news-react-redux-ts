@@ -1,61 +1,61 @@
 import { IState, TypeState, TypeStateAction, IMovement } from './../types/index';
-import { applyMiddleware, legacy_createStore as createStore} from "redux"
+import { applyMiddleware, legacy_createStore as createStore } from "redux"
 import thunk from "redux-thunk"
 
 
-const initialState:IState = {
-    movements:[],
-    currentMv:[], 
-    timeTraining:0,
-    loading:false,
-    error:null
+const initialState: IState = {
+    movements: [],
+    currentMv: [],
+    timeTraining: 0,
+    loading: false,
+    error: null
 }
 
 
-export const reducer = (state :IState= initialState, action:TypeStateAction):IState => {
-    switch (action.type){
+export const reducer = (state: IState = initialState, action: TypeStateAction): IState => {
+    switch (action.type) {
         case TypeState.StateLoad:
-            return {...state, loading:true}
-        //point
+            return { ...state, loading: true }
+
         case TypeState.StateSuccess:
-            return {...state, loading:false, movements:action.payload}
+            return { ...state, loading: false, movements: action.payload }
 
         case TypeState.StateError:
-            return {...state, loading:false, error:action.payload}
+            return { ...state, loading: false, error: action.payload }
 
         case TypeState.StateAdd:
-            return {...state, currentMv:[...state.currentMv, action.payload]}
+            return { ...state, currentMv: [...state.currentMv, action.payload] }
 
         case TypeState.StatePoint:
-            state.movements.forEach(element=>{
-                if(element.name == action.payload.name) element.currentList = !element.currentList
+            state.movements.forEach(element => {
+                if (element.name == action.payload.name) element.currentList = !element.currentList
             })
-            return {...state}
+            return { ...state }
 
         case TypeState.StateResetCurrMV:
-            return {...state, currentMv:[...action.payload]}
+            return { ...state, currentMv: [...action.payload] }
 
         case TypeState.StatePopCurrMV:
             state.currentMv.shift()
-            return {...state}
-            
+            return { ...state }
+
         case TypeState.StateDeleteArrCurMV:
-            return {...state, currentMv:[]}
+            return { ...state, currentMv: [] }
 
         case TypeState.StateEdit:
-            state.currentMv.forEach(element=>{
-                if(element.name == action.payload.name) {
+            state.currentMv.forEach(element => {
+                if (element.name == action.payload.name) {
                     element.relax = action.payload.relax
                     element.approach = action.payload.approach
                 }
             })
-            return {...state}
+            return { ...state }
 
         case TypeState.StateRemove:
-            return{...state, currentMv:state.currentMv.filter(e=>e.name !== action.payload.name)}    
+            return { ...state, currentMv: state.currentMv.filter(e => e.name !== action.payload.name) }
 
         case TypeState.StateAddTime:
-                return{...state, timeTraining:action.payload}    
+            return { ...state, timeTraining: action.payload }
 
         default:
             return state

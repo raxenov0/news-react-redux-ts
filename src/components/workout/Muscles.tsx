@@ -16,6 +16,7 @@ export const Muscles: React.FunctionComponent = () => {
 
     function handleClick(){
         localStorage.setItem('ListMv', JSON.stringify(movements))
+        localStorage.setItem('selectProgram', JSON.stringify(true))
         url('training')
     }
 

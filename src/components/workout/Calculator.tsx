@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Deadlifts, getAverage, squats } from "../../additionalFunctions/calculation";
 import { Close } from "../../UI/close/close";
 import './calculator.css'
-const back = require('./../../image/pointer.png')
 
 export const Calculator: React.FunctionComponent = () => {
 
-    const url = useNavigate()
 
     const [weight, setWeight] = useState<number>(10)
     const [count, setCount] = useState<number>(1)
@@ -73,7 +70,6 @@ export const Calculator: React.FunctionComponent = () => {
                     </div>
                 </div>
             </div>
-
         </div>
 
     )
